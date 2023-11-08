@@ -122,6 +122,7 @@ MonoBehaviour:
   keyOne: 115
   keyTwo: 119
   moveDirection: {x: 0.75, y: 0, z: 0}
+  soundManager: {fileID: 2189705837653330450, guid: 82ca63ec35d478e45b8dde42d4bf03b8, type: 3}
 --- !u!54 &971159335785316786
 Rigidbody:
   m_ObjectHideFlags: 0
