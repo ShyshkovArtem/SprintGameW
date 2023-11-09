@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5255284241332992340}
   - component: {fileID: 3650699503486374915}
   - component: {fileID: 1403771964579933896}
-  - component: {fileID: 8339228238558871966}
+  - component: {fileID: 82108762359364464}
   m_Layer: 5
-  m_Name: Button
+  m_Name: SoundsButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -80, y: -53}
+  m_AnchoredPosition: {x: -140.5, y: -53}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5255284241332992340
@@ -121,9 +121,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8339228238558871966}
-        m_TargetAssemblyTypeName: AudioUIUpdator, Assembly-CSharp
-        m_MethodName: OnButtonClick
+      - m_Target: {fileID: 82108762359364464}
+        m_TargetAssemblyTypeName: SoundUIUpdator, Assembly-CSharp
+        m_MethodName: OnSoundButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8339228238558871966
+--- !u!114 &82108762359364464
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,8 +142,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2734829290272637316}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 517493a9a0ff3fd4aa0b0de5b0a7ce01, type: 3}
+  m_Script: {fileID: 11500000, guid: f7cca5361540efd46b10b5a260f999a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playMusic: {fileID: 21300000, guid: aa5ef5454c6d9ae45b9df5b126ed1da5, type: 3}
-  muteMusic: {fileID: 21300000, guid: 645b40617560120449ea0ba529156555, type: 3}
+  soundOn: {fileID: 21300000, guid: b3e12a140eecaf142be7f5c607e2a6d4, type: 3}
+  soundOff: {fileID: 21300000, guid: 70ee3e02a483f4448822287299517ef6, type: 3}

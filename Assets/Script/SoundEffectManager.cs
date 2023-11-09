@@ -7,14 +7,16 @@ using UnityEngine;
 
 public class SoundEffectManager : MonoBehaviour
 {
-    [SerializeField] GameObject player;
-    [SerializeField] AudioSource audioSource_Finish;
-    private bool IsPlaying = false;
+    
+    [SerializeField] AudioSource soundEffects;
+    [SerializeField] AudioClip buttonPressed;
+    [SerializeField] AudioClip levelComplete;
+    private bool isSoundOn = true;
     // Start is called before the first frame update
     void Start()
     {
-        audioSource_Finish = GetComponent<AudioSource>();
-        Debug.Log(player.tag);
+        soundEffects = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -22,16 +24,31 @@ public class SoundEffectManager : MonoBehaviour
     {
         
     }
-
-    public void PlayLevelFinish()
+    public void PlayButtonPressed()
     {
-        IsPlaying = !IsPlaying;
-        audioSource_Finish.Play();
-        IsPlaying = !IsPlaying;
+        soundEffects.clip = buttonPressed;
+        soundEffects.Play();
+    }
+    public void PlayLevelComplete()
+    {
+        soundEffects.clip = levelComplete;
+        soundEffects.Play();
     }
 
-    public bool IsPLaying()
+    public void ToggleSounds()
     {
-        return IsPlaying;
+        isSoundOn = !isSoundOn;
+        if(isSoundOn)
+        {
+            soundEffects.mute = false;
+        }
+        else
+        {
+            soundEffects.mute = true;
+        }
+    }
+    public bool IsSoundOn()
+    {
+        return isSoundOn;
     }
 }

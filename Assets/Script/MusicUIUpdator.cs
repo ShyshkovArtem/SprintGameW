@@ -3,38 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AudioUIUpdator : MonoBehaviour
+public class MusicUIUpdator : MonoBehaviour
 {
-    public Sprite playMusic;
-    public Sprite muteMusic;
+    public Sprite musicOn;
+    public Sprite musicOff;
 
     private Image musicButtonImage;
     private MusicManager musicManager;
-
 
     private void Start()
     {
         musicButtonImage = GetComponent<Image>();
         musicManager = FindObjectOfType<MusicManager>();
-        UpdateButtonImage();
-        
+        UpdateMusicButtonImage();
     }
 
-    public void OnButtonClick()
+    public void OnMusicButtonClick()
     {
         musicManager.ToggleMusic();
-        UpdateButtonImage();
+        UpdateMusicButtonImage();
     }
 
-    private void UpdateButtonImage()
+
+    private void UpdateMusicButtonImage()
     {
         if (musicManager.IsMusicOn())
         {
-            musicButtonImage.sprite = playMusic;
+            musicButtonImage.sprite = musicOn;
         }
         else
         {
-            musicButtonImage.sprite = muteMusic;
+            musicButtonImage.sprite = musicOff;
         }
     }
 }
