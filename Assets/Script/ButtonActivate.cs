@@ -11,7 +11,13 @@ public class ButtonActivate : MonoBehaviour
     public Material normal;
     public Material transparent;
     public bool canPush;
+    public bool isActive;
+    private SoundEffectManager soundEffectManager;
 
+    private void Awake()
+    {
+        soundEffectManager = FindObjectOfType<SoundEffectManager>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (canPush) { 
@@ -27,11 +33,19 @@ public class ButtonActivate : MonoBehaviour
                     second.GetComponent<Renderer>().material = transparent;
                     second.GetComponent<Collider>().isTrigger = true;
                 }
+            if (isActive)
+                {
+                    isActive = !isActive;
+                    soundEffectManager.PlayButtonPressed();
+                }
+            
             GetComponent<Renderer>().material = transparent;
             button.GetComponent<Renderer>().material = normal;
             button.canPush = true;
+            button.isActive =!isActive;
         }
-    }
+            
+        }
 
 }
 }
