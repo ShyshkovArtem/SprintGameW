@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] KeyCode keyOne;
     [SerializeField] KeyCode keyTwo;
     [SerializeField] Vector3 moveDirection;
+    [SerializeField] SoundEffectManager soundEffectManager;
 
+    private void Awake()
+    {
+        soundEffectManager = FindObjectOfType<SoundEffectManager>();
+    }
     private void FixedUpdate()
     {
         if (Input.GetKey(keyOne))
@@ -26,6 +32,11 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Q))
         {
+            if (SceneManager.GetActiveScene().buildIndex == 3)
+            {
+                SceneManager.LoadSceneAsync(0);
+            }
+            else
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
@@ -34,14 +45,18 @@ public class Player : MonoBehaviour
     {
         if(this.CompareTag("Player") && other.CompareTag("Finish"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            soundEffectManager.PlayLevelComplete();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);        
         }
         if(this.CompareTag("Cube") && other.CompareTag("Cube"))
         {
-            foreach(ButtonActivate button in FindObjectsOfType<ButtonActivate>())
+            
+            foreach (ButtonActivate button in FindObjectsOfType<ButtonActivate>())
             {
+                
                 button.canPush = false;
             }
+            
         }
     }
 
