@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44795787, g: 0.49795955, b: 0.5754887, a: 1}
+  m_IndirectSpecularColor: {r: 0.4479583, g: 0.4979605, b: 0.5754898, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1638,7 +1638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' LVL 2
+  m_text: ' LVL 3
 
 '
   m_isRightToLeft: 0
