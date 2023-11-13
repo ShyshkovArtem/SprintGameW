@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Q))
         {
-            if (SceneManager.GetActiveScene().buildIndex == 3)
+            if (SceneManager.GetActiveScene().buildIndex == 4)
             {
                 SceneManager.LoadSceneAsync(0);
             }
